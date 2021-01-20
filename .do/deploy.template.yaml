@@ -1,4 +1,3 @@
-
 spec:
   name: glitchtip
   services:
@@ -6,4 +5,16 @@ spec:
     git:
       branch: master
       repo_clone_url: https://gitlab.com/glitchtip/glitchtip-app-platform.git
-    name: glitchtip
+    name: glitchtip-web
+    envs:
+     - key: SECRET_KEY
+       value: "Enter a random string of characters"
+       type: SECRET
+     - key: EMAIL_URL
+     - key: DEFAULT_FROM_EMAIL
+     - key: GLITCHTIP_DOMAIN
+     - key: DATABASE_URL
+       scope: RUN_TIME
+       value: ${glitchtip-db.DATABASE_URL}
+  databases:
+  - name: glitchtip-db
