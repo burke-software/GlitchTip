@@ -1,0 +1,1 @@
+FROM glitchtip/glitchtip:latest

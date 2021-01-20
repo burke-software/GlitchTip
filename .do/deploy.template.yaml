@@ -1,0 +1,9 @@
+
+spec:
+  name: glitchtip
+  services:
+  - dockerfile_path: Dockerfile
+    git:
+      branch: master
+      repo_clone_url: https://gitlab.com/glitchtip/glitchtip-app-platform.git
+    name: glitchtip
