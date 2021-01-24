@@ -1,0 +1,8 @@
+{
+  "name": "GlitchTip",
+  "description": "",
+  "repository": "https://gitlab.com/glitchtip/glitchtip-app-platform",
+  "logo": "https://glitchtip.com/assets/logo-again.svg",
+  "keywords": ["python", "django"]
+}
+
