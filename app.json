@@ -10,6 +10,9 @@
       "size": "standard-1x"
     }
   },
+  "scripts": {
+    "postdeploy": "./manage.py migrate"
+  },
   "image": "glitchtip/glitchtip"
 }
 
