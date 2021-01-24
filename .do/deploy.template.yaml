@@ -1,4 +1,17 @@
 spec:
+  envs:
+  - key: SECRET_KEY
+    value: "Enter a random string of characters"
+    type: SECRET
+  - key: EMAIL_URL
+  - key: DEFAULT_FROM_EMAIL
+  - key: GLITCHTIP_DOMAIN
+  - key: DATABASE_URL
+    scope: RUN_TIME
+    value: ${glitchtip-db.DATABASE_URL}
+  - key: REDIS_URL
+    scope: RUN_TIME
+    value: ${glitchtip-redis.DATABASE_URL}
   name: glitchtip
   services:
   - dockerfile_path: Dockerfile
@@ -6,19 +19,6 @@ spec:
       branch: master
       repo_clone_url: https://gitlab.com/glitchtip/glitchtip-app-platform.git
     name: glitchtip-web
-    envs:
-     - key: SECRET_KEY
-       value: "Enter a random string of characters"
-       type: SECRET
-     - key: EMAIL_URL
-     - key: DEFAULT_FROM_EMAIL
-     - key: GLITCHTIP_DOMAIN
-     - key: DATABASE_URL
-       scope: RUN_TIME
-       value: ${glitchtip-db.DATABASE_URL}
-     - key: REDIS_URL
-       scope: RUN_TIME
-       value: ${glitchtip-redis.DATABASE_URL}
   workers:
   - dockerfile_path: Dockerfile
     git:
@@ -26,19 +26,6 @@ spec:
       repo_clone_url: https://gitlab.com/glitchtip/glitchtip-app-platform.git
     name: glitchtip-worker
     run_command: ./bin/run-celery-with-beat.sh
-    envs:
-     - key: SECRET_KEY
-       value: "Enter a random string of characters"
-       type: SECRET
-     - key: EMAIL_URL
-     - key: DEFAULT_FROM_EMAIL
-     - key: GLITCHTIP_DOMAIN
-     - key: DATABASE_URL
-       scope: RUN_TIME
-       value: ${glitchtip-db.DATABASE_URL}
-     - key: REDIS_URL
-       scope: RUN_TIME
-       value: ${glitchtip-redis.DATABASE_URL}
   jobs:
   - dockerfile_path: Dockerfile
     git:
@@ -46,12 +33,6 @@ spec:
       repo_clone_url: https://gitlab.com/glitchtip/glitchtip-app-platform.git
     name: glitchtip-migrate
     run_command: ./manage.py migrate
-    envs:
-     - key: SECRET_KEY
-       value: "fake"
-     - key: DATABASE_URL
-       scope: RUN_TIME
-       value: ${glitchtip-db.DATABASE_URL}
   databases:
   - name: glitchtip-db
   - name: glitchtip-redis
