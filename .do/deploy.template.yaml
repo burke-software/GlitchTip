@@ -16,5 +16,10 @@ spec:
      - key: DATABASE_URL
        scope: RUN_TIME
        value: ${glitchtip-db.DATABASE_URL}
+     - key: REDIS_URL
+       scope: RUN_TIME
+       value: ${glitchtip-redis.DATABASE_URL}
   databases:
   - name: glitchtip-db
+  - name: glitchtip-redis
+    engine: REDIS
