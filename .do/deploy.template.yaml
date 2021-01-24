@@ -24,3 +24,4 @@ spec:
   - name: glitchtip-redis
     engine: REDIS
     production: true
+    cluster_name: glitchtip
