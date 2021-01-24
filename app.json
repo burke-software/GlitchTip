@@ -1,7 +1,7 @@
 {
   "name": "GlitchTip",
-  "description": "",
-  "repository": "https://gitlab.com/glitchtip/glitchtip-app-platform",
+  "description": "An open source reimplementation of Sentry error tracking platform",
+  "repository": "https://gitlab.com/glitchtip/glitchtip-app-platform.git",
   "logo": "https://glitchtip.com/assets/logo-again.svg",
   "keywords": ["python", "django"]
 }
