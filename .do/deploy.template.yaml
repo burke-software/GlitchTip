@@ -23,3 +23,4 @@ spec:
   - name: glitchtip-db
   - name: glitchtip-redis
     engine: REDIS
+    production: true
