@@ -1,1 +1,44 @@
+# Installing GlitchTip on DigitalOcean App Platform
+
+GlitchTip on DO App Platform consists of a web, worker, migration job, postgres database, and redis. Start by clicking the following button. Note this link acts as a referral and helps fund GlitchTip.
+
 [![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://gitlab.com/glitchtip/glitchtip-app-platform/tree/master&refcode=7e90b8fb37f8)
+
+Leave environment variables blank and click next. Pick the basic or pro plan. One 512 MB RAM | 1 vCPU is fine to start with. Click Launch. Now copy [app-platform.yaml](app-platfrom.yaml) to your local computer. Edit the following
+
+## Environment Variables
+
+At a minimum, set the SECRET_KEY to a random string of letters.
+
+For more infomation on configuration settings see our install [docs](https://glitchtip.com/documentation/install#Configuration).
+
+## Redis
+
+GlitchTip requires Redis for sending notification, managing events, and more. Go to https://cloud.digitalocean.com/databases/ and create a new redis database. For almost all size instances, the 1 GB RAM | 1 vCPU instance is sufficient. Enter your redis database's name in the glitchtip-redis section. If your redis database name is like `db-redis-nyc1-11111` then it should look like.
+
+```
+- name: glitchtip-redis
+  engine: REDIS
+  production: true
+  cluster_name: db-redis-nyc1-11111
+```
+
+## Deploying
+
+You'll need to install [doctl](https://www.digitalocean.com/docs/apis-clis/doctl/how-to/install/) and log in. 
+
+Run `doctl apps list` to get your app's id.
+
+Now apply your app-platform.yaml spec with `doctl apps update 11111111-1111-1111-1111-111111111 --spec app-platform.yaml` (enter your actual id)
+
+After deployment, you should be able to visit the app URL and start using GlitchTip!
+
+## Production considerations
+
+If you intend to use GlitchTip in production, consider upgrading your Postgres database to a production instance. In the web interface, go to Manage Components, glitchtip-db, Upgrade to a managed database.
+
+If you haven't already, you'll need to set up email via environment variables. 
+
+## Upgrading GlitchTip
+
+By default, the docker image tag is "latest". Click Deploy to upgrade to the latest GlitchTip docker image.
