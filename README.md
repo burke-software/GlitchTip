@@ -14,13 +14,13 @@ For more infomation on configuration settings see our install [docs](https://gli
 
 ## Redis
 
-GlitchTip requires Redis for sending notification, managing events, and more. Go to https://cloud.digitalocean.com/databases/ and create a new redis database. For almost all size instances, the 1 GB RAM | 1 vCPU instance is sufficient. Enter your redis database's name in the glitchtip-redis section. If your redis database name is like `db-redis-nyc1-11111` then it should look like.
+GlitchTip requires Redis for sending notification, managing events, and more. Go to https://cloud.digitalocean.com/databases/ and create a new redis database. For almost all size instances, the 1 GB RAM | 1 vCPU instance is sufficient. Enter your redis database's name in the glitchtip-redis section. Let's assume it's named "glitchtip-redis".
 
 ```
 - name: glitchtip-redis
   engine: REDIS
   production: true
-  cluster_name: db-redis-nyc1-11111
+  cluster_name: glitchtip-redis
 ```
 
 ## Deploying
