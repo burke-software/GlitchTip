@@ -10,11 +10,11 @@ Leave environment variables blank and click next. Pick the basic or pro plan. On
 
 At a minimum, set the SECRET_KEY to a random string of letters.
 
-For more infomation on configuration settings see our install [docs](https://glitchtip.com/documentation/install#Configuration).
+For more information on configuration settings see our install [docs](https://glitchtip.com/documentation/install#Configuration).
 
 ## Redis
 
-GlitchTip requires Redis for sending notification, managing events, and more. Go to https://cloud.digitalocean.com/databases/ and create a new redis database. For almost all size instances, the 1 GB RAM | 1 vCPU instance is sufficient. Enter your redis database's name in the glitchtip-redis section. Let's assume it's named "glitchtip-redis".
+GlitchTip requires Redis for sending notification, managing events, and more. Go to https://cloud.digitalocean.com/databases/ and create a new redis database. For almost all size instances, the 1 GB RAM | 1 vCPU instance is sufficient. Enter your redis database's name in the glitchtip-redis section. Let's assume it's named "glitchtip-redis". At the time of this writing, both "name" and "cluster_name" must be the same value. 
 
 ```
 - name: glitchtip-redis
@@ -22,6 +22,8 @@ GlitchTip requires Redis for sending notification, managing events, and more. Go
   production: true
   cluster_name: glitchtip-redis
 ```
+
+Ensure the environment variable "REDIS_URL" uses the same name. If you didn't name your redis instance "glitchtip-redis" then make sure to update it.
 
 ## Deploying
 
