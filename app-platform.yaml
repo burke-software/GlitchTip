@@ -10,7 +10,7 @@ envs:
   value: ${glitchtip-db.DATABASE_URL}
 - key: REDIS_URL
   scope: RUN_TIME
-  value: ${glitchtip-redis.DATABASE_URL}
+  value: ${glitchtip-redis.REDIS_URL}
 name: glitchtip
 services:
 - dockerfile_path: Dockerfile
@@ -37,4 +37,4 @@ databases:
 - name: glitchtip-redis
   engine: REDIS
   production: true
-  cluster_name: glitchtip
+  cluster_name: glitchtip-redis
