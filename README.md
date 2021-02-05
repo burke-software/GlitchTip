@@ -4,13 +4,17 @@ GlitchTip on DO App Platform consists of a web, worker, migration job, postgres 
 
 [![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://gitlab.com/glitchtip/glitchtip-app-platform/tree/master&refcode=7e90b8fb37f8)
 
-Leave environment variables blank and click next. Pick the basic or pro plan. One 512 MB RAM | 1 vCPU is fine to start with. Click Launch. Now copy [app-platform.yaml](app-platfrom.yaml) to your local computer. Edit the following
+Leave environment variables blank and click next. Pick the basic or pro plan. One 512 MB RAM | 1 vCPU is fine to start with. Click Launch. Now copy [app-platform.yaml](https://gitlab.com/glitchtip/glitchtip-app-platform/-/blob/master/app-platform.yaml) to your local computer. Edit the following
 
 ## Environment Variables
 
 At a minimum, set the SECRET_KEY to a random string of letters.
 
 For more information on configuration settings see our install [docs](https://glitchtip.com/documentation/install#Configuration).
+
+## Name Variable
+
+The name variable is set to "glitchtip". You can change this, as long as it doesn't match any other app names in your Digital Ocean account.
 
 ## Redis
 
