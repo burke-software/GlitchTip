@@ -19,20 +19,6 @@ spec:
       registry: hub.docker.com
       repository: glitchtip/glitchtip
     name: glitchtip-web
-  workers:
-  - dockerfile_path: Dockerfile
-    git:
-      branch: master
-      repo_clone_url: https://gitlab.com/glitchtip/glitchtip-app-platform.git
-    name: glitchtip-worker
-    run_command: ./bin/run-celery-with-beat.sh
-  jobs:
-  - dockerfile_path: Dockerfile
-    git:
-      branch: master
-      repo_clone_url: https://gitlab.com/glitchtip/glitchtip-app-platform.git
-    name: glitchtip-migrate
-    run_command: ./manage.py migrate
   databases:
   - name: glitchtip-db
   - name: glitchtip-redis
