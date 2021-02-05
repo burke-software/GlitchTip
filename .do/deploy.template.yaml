@@ -14,8 +14,7 @@ spec:
     value: ${glitchtip-redis.DATABASE_URL}
   name: glitchtip
   services:
-  - dockerfile_path: Dockerfile
-    image:
+  - image:
       registry_type: DOCKER_HUB
       registry: hub.docker.com
       repository: glitchtip/glitchtip
