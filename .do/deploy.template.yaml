@@ -15,9 +15,10 @@ spec:
   name: glitchtip
   services:
   - dockerfile_path: Dockerfile
-    git:
-      branch: master
-      repo_clone_url: https://gitlab.com/glitchtip/glitchtip-app-platform.git
+    image:
+      registry_type: DOCKER_HUB
+      registry: hub.docker.com
+      repository: glitchtip/glitchtip
     name: glitchtip-web
   workers:
   - dockerfile_path: Dockerfile
