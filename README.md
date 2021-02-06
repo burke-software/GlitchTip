@@ -2,7 +2,7 @@
 
 GlitchTip on DO App Platform consists of a web, worker, migration job, postgres database, and redis. Start by clicking the following button. Note this link acts as a referral and helps fund GlitchTip.
 
-[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://gitlab.com/glitchtip/glitchtip-app-platform/tree/master&refcode=7e90b8fb37f8)
+[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://gitlab.com/glitchtip/glitchtip-app/tree/master&refcode=7e90b8fb37f8)
 
 Leave environment variables blank and click next. Pick the basic or pro plan. One 512 MB RAM | 1 vCPU is fine to start with. Click Launch. Now copy [app-platform.yaml](app-platfrom.yaml) to your local computer. Edit the following
 
