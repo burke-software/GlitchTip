@@ -17,20 +17,20 @@ spec:
   - dockerfile_path: Dockerfile
     git:
       branch: master
-      repo_clone_url: https://gitlab.com/glitchtip/glitchtip-app-platform.git
+      repo_clone_url: https://gitlab.com/glitchtip/glitchtip.git
     name: glitchtip-web
   workers:
   - dockerfile_path: Dockerfile
     git:
       branch: master
-      repo_clone_url: https://gitlab.com/glitchtip/glitchtip-app-platform.git
+      repo_clone_url: https://gitlab.com/glitchtip/glitchtip.git
     name: glitchtip-worker
     run_command: ./bin/run-celery-with-beat.sh
   jobs:
   - dockerfile_path: Dockerfile
     git:
       branch: master
-      repo_clone_url: https://gitlab.com/glitchtip/glitchtip-app-platform.git
+      repo_clone_url: https://gitlab.com/glitchtip/glitchtip.git
     name: glitchtip-migrate
     run_command: ./manage.py migrate
   databases:
