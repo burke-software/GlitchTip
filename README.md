@@ -15,9 +15,9 @@ GlitchTip on DO App Platform consists of a web, worker, migration job, postgres 
 
 Leave environment variables blank and click next. Pick the basic or pro plan. One 512 MB RAM | 1 vCPU is fine to start with. Click Launch. Now copy [app-platform.yaml](app-platform.yaml) to your local computer. Edit the following
 
-## Name
+## Name and region
 
-This can be anything. We default to "glitchtip"
+This can be anything. We default to "glitchtip" and "nyc".
 
 ## Environment Variables
 
