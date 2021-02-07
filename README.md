@@ -1,3 +1,12 @@
+# GlitchTip
+
+This is a meta repo for general issue tracking, wiki, and deployment information.
+
+- [Django Backend](https://gitlab.com/glitchtip/glitchtip-backend)
+- [Angular Frontend](https://gitlab.com/glitchtip/glitchtip-frontend)
+- [Documentation](https://glitchtip.com/documentation)
+- [Wiki](https://gitlab.com/glitchtip/glitchtip/-/wikis/home) 
+
 # Installing GlitchTip on DigitalOcean App Platform
 
 GlitchTip on DO App Platform consists of a web, worker, migration job, postgres database, and redis. Start by clicking the following button. Note this link acts as a referral and helps fund GlitchTip.
