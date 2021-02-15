@@ -11,7 +11,7 @@
       "size": "free"
     },
     "worker": {
-      "quantity": 1,
+      "quantity": 0,
       "size": "free"
     }
   },
@@ -45,7 +45,7 @@
     },
     "GLITCHTIP_MAX_EVENT_LIFE_DAYS": {
       "description": "(Default 90) Events and associated data older than this will be deleted from the database.",
-      "value": 90,
+      "value": "90",
       "required": false
     },
     "ENABLE_OPEN_USER_REGISTRATION": {
