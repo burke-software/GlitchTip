@@ -57,3 +57,7 @@ If you haven't already, you'll need to set up email via environment variables.
 ## Upgrading GlitchTip
 
 By default, the docker image tag is "latest". Click Deploy to upgrade to the latest GlitchTip docker image.
+
+# Deploy on Heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/burke-software/GlitchTip)
