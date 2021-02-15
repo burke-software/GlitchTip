@@ -50,7 +50,10 @@
     },
     "ENABLE_OPEN_USER_REGISTRATION": {
       "description": "Set to True to allow any user to register new organizations.",
-      "value": false,
+      "required": false
+    },
+    "GLITCHTIP_DOMAIN": {
+      "description": "Set to your domain. Include scheme (http or https). Example: https://glitchtip.example.com.",
       "required": false
     }
 
