@@ -14,6 +14,16 @@
   "scripts": {
     "postdeploy": "./manage.py migrate"
   },
+  "env": {
+    "SECRET_KEY": {
+      "description": "Django Secret Key - set to any random string.",
+      "generator": "secret"
+    }
+  },
   "image": "glitchtip/glitchtip",
-  "stack": "container"
+  "stack": "container",
+  "addons": [
+    "heroku-postgresql",
+    "heroku-redis"
+  ]
 }
