@@ -52,7 +52,6 @@
       "description": "Set to your domain. Include scheme (http or https). Example: https://glitchtip.example.com.",
       "required": false
     }
-
   },
   "image": "glitchtip/glitchtip",
   "stack": "container",
