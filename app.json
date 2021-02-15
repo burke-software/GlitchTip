@@ -3,6 +3,7 @@
   "description": "An open source reimplementation of Sentry error tracking platform",
   "repository": "https://gitlab.com/glitchtip/glitchtip.git",
   "logo": "https://glitchtip.com/assets/logo-again.svg",
+  "website": "https://glitchtip.com",
   "keywords": ["python", "django"],
   "formation": {
     "web": {
