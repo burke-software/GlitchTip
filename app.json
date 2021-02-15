@@ -9,6 +9,10 @@
     "web": {
       "quantity": 1,
       "size": "free"
+    },
+    "worker": {
+      "quantity": 1,
+      "size": "free"
     }
   },
   "scripts": {
@@ -16,9 +20,40 @@
   },
   "env": {
     "SECRET_KEY": {
-      "description": "Django Secret Key - set to any random string.",
+      "description": "Django Secret Key.",
       "generator": "secret"
+    },
+    "DEFAULT_FROM_EMAIL": {
+      "description": "Default from email address. Example info@example.com",
+      "required": false
+    },
+    "EMAIL_URL": {
+      "description": "SMTP string. It will look something like smtp://email@:password@smtp_url:port",
+      "required": false
+    },
+    "MAILGUN_API_KEY": {
+      "description": "Alternatively, use the Mailgun API for email",
+      "required": false
+    },
+    "MAILGUN_SENDER_DOMAIN": {
+      "description": "If you are using a specific Mailgun sender domain that is different from your messages’ from_email domains, set this to the domain you’ve configured in your Mailgun account.",
+      "required": false
+    },
+    "EMAIL_BACKEND": {
+      "description": "If using mailgun, set to anymail.backends.mailgun.EmailBackend",
+      "required": false
+    },
+    "GLITCHTIP_MAX_EVENT_LIFE_DAYS": {
+      "description": "(Default 90) Events and associated data older than this will be deleted from the database.",
+      "value": 90,
+      "required": false
+    },
+    "ENABLE_OPEN_USER_REGISTRATION": {
+      "description": "Set to True to allow any user to register new organizations.",
+      "value": false,
+      "required": false
     }
+
   },
   "image": "glitchtip/glitchtip",
   "stack": "container",
