@@ -13,6 +13,6 @@
   "scripts": {
     "postdeploy": "./manage.py migrate"
   },
-  "image": "glitchtip/glitchtip"
+  "image": "glitchtip/glitchtip",
+  "stack": "container"
 }
-
