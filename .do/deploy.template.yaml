@@ -14,24 +14,35 @@ spec:
     value: ${glitchtip-redis.DATABASE_URL}
   name: glitchtip
   services:
-  - dockerfile_path: Dockerfile
-    git:
-      branch: master
-      repo_clone_url: https://gitlab.com/glitchtip/glitchtip.git
-    name: glitchtip-web
+  - name: web
+    image:
+      registry_type: DOCKER_HUB
+      registry: glitchtip
+      repository: glitchtip
+      tag: latest  # Consider pinning to a specific version
+    instance_count: 1
+    envs:
+      - key: SERVER_ROLE
+        value: "web"
+
   workers:
-  - dockerfile_path: Dockerfile
-    git:
-      branch: master
-      repo_clone_url: https://gitlab.com/glitchtip/glitchtip.git
-    name: glitchtip-worker
-    run_command: ./bin/run-celery-with-beat.sh
+  - name: worker
+    image:
+      registry_type: DOCKER_HUB
+      registry: glitchtip
+      repository: glitchtip
+      tag: latest  # Consider pinning to a specific version
+    instance_count: 1  # Keep this 1, add worker (no beat) for more
+    envs:
+      - key: SERVER_ROLE
+        value: "worker_with_beat"
   jobs:
-  - dockerfile_path: Dockerfile
-    git:
-      branch: master
-      repo_clone_url: https://gitlab.com/glitchtip/glitchtip.git
-    name: glitchtip-migrate
+  - image:
+      registry_type: DOCKER_HUB
+      registry: glitchtip
+      repository: glitchtip
+      tag: latest  # Consider pinning to a specific version
+    name: migrate
     run_command: ./manage.py migrate
   databases:
   - name: glitchtip-db
