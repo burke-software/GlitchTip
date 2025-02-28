@@ -21,6 +21,7 @@ spec:
       repository: glitchtip
       tag: latest  # Consider pinning to a specific version
     instance_count: 1
+    instance_size_slug: basic-xxs
     envs:
       - key: SERVER_ROLE
         value: "web"
@@ -33,6 +34,7 @@ spec:
       repository: glitchtip
       tag: latest  # Consider pinning to a specific version
     instance_count: 1  # Keep this 1, add worker (no beat) for more
+    instance_size_slug: basic-xxs
     envs:
       - key: SERVER_ROLE
         value: "worker_with_beat"
